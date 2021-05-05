@@ -1,0 +1,37 @@
+﻿@model Assignment_4.Models.Team
+@using Assignment_4.Models
+@Styles.Render("~/Content/Roster.css");
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    double avgKD = 0;
+    foreach (Player p in Model.teamPlayers)
+    {
+        avgKD += p.KD;
+    }
+    avgKD = avgKD / Model.teamPlayers.Count - 1;
+    string avgkd =string.Format("{0:f}", avgKD);
+    <h2>@ViewBag.Title</h2>
+    <br />
+    <p class="teamDetails">Team KD Average: <span>@avgkd</span> Region: <span>@Model.Region</span></p>
+    <br />
+
+    <h3>Team Players</h3>
+    foreach (Player p in Model.teamPlayers)
+    {
+        <div class="row" id="player">
+            <div class="col-md-2">
+                <div class="col-md-10">
+                    <h2>IGN: <span>@(p.IGN)</span></h2>
+                    <p>KD: <span>@(p.KD)</span> Region:<span>@(p.Region)</span></p><br />
+                    <p>
+                        Teams: @{ foreach (Team t in p.Teams)
+                            {
+                                <span>@Html.ActionLink(t.Name, "ShowTeam", "Home", new { id = t.Id }, new { @class = "teamLink" })</span>
+                            }
+                        }
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+}

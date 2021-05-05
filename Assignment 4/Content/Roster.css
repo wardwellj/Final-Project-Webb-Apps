@@ -1,0 +1,141 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+    
+}
+
+#siteHeader{
+    height: 80px;
+}
+
+#siteHeader h2{
+    font-weight: bold;
+    position: absolute;
+    left: 40%;
+    width: 300px;
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: red;
+}
+
+
+footer {
+    font-size: 12pt;
+    font-weight: bold;
+    background-color: red;
+    color: black;
+    position: relative;
+    bottom: 0px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    width: 100%;
+    height: 60px;
+    padding-top: 20px;
+}
+
+.footer-text{
+    position: absolute;
+    color: gold;
+    left: 50px;
+    margin-left: 20px !important;
+}
+
+.title{
+    color: black;
+    position: relative;
+    left: 50px;
+    align-content: center;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+#detailNote {
+    position: relative;
+    left: 50px;
+    font-size: 12pt;
+}
+
+#player{
+    display: inline-flex;
+    padding: 5px;
+    margin: 10px;
+    height: 200px;
+    background-color: azure;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+#player h2{
+    display: inline-block;
+    color: black;
+
+    width: 400px;
+    padding: 20px;
+}
+
+#player span{
+    color: red;
+    font-style: oblique;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 8px;
+}
+
+#player p{
+    position: absolute;
+    width: 300px;
+    font-size: 12pt;
+}
+
+#team {
+    display: inline-flex;
+    padding: 5px;
+    margin: 20px;
+    height: 200px;
+    width: 500px;
+    background-color: azure;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+#team h2{
+    display: inline-block;
+    color: black;
+
+    width: 600px;
+    padding: 20px;
+}
+
+#team p {
+    position: absolute;
+    width: 600px;
+    font-size: 12pt;
+}
+
+#team span{
+    color: red;
+    text-decoration: none;
+    font-style: oblique;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.teamLink{
+    text-decoration: none;
+    color: red;
+}
+
+.teamLink:hover{
+    color: gold;
+    text-decoration: none;
+}
+

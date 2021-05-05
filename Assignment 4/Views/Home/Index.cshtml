@@ -1,0 +1,11 @@
+﻿<html>
+@Styles.Render("~/Content/Index.css")
+    <body>
+        <h2 class="title">Kenetics Call of Duty</h2>
+
+        <div class="INDEXactionLinkDiv">@Html.ActionLink("Look At Player Roster", "Roster", "Home", new { @class = "INDEXactionLink" })</div>
+        
+        <div class="INDEXactionLinkDiv">@Html.ActionLink("Look At Team List", "Teams", "Home", new { @class="INDEXactionLink" })</div>
+
+    </body>
+</html>

@@ -1,0 +1,59 @@
+﻿@using Assignment_4.Models
+@Styles.Render("~/Content/Roster.css");
+<div class="panel-body" id="searchBarOuterDiv">
+    @using (Html.BeginForm("SearchRoster", "Home"))
+    {
+        <div class="form-group">
+            <label>Search By:</label>
+            @Html.DropDownList("searchBy", new[] {
+              new SelectListItem() { Text = "IGN(In Game Name)", Value = "IGN(In Game Name)"},
+              new SelectListItem() { Text = "Region", Value = "Region"},
+              new SelectListItem() { Text = "KD Greater Than", Value = "KD Greater Than"},
+              new SelectListItem() { Text = "KD Less Than", Value = "KD Less Than"}
+            }, "Anything", new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Search For:</label>
+            @Html.TextBox("searchText", "", new { @class = "form-control" })
+        </div>
+
+        <div class="text-center">
+            <input class="btn btn-success" type="submit" value="Go!" />
+        </div>
+    }
+</div>
+@{
+
+    Layout = "../Shared/_Layout.cshtml";
+    ViewBag.Title = "Roster";
+    <h2 class="title">@ViewBag.Title</h2>
+
+    if (Model.Players.Count == 0)
+    {
+        <p>No Players Found</p>
+    }
+    else
+    {
+        foreach (Player p in Model.Players)
+        {
+            <div class="row" id="player">
+                <div class="col-md-2">
+                    <div class="col-md-10">
+                        <h2>IGN: <span>@(p.IGN)</span></h2>
+                        <p>KD: <span>@(p.KD)</span> Region:<span>@(p.Region)</span></p><br />
+                        <p>
+                            Teams: @{ foreach (Team t in p.Teams)
+                                {
+                                    <span>@Html.ActionLink(t.Name, "ShowTeam", "Home", new { id = t.Id }, new { @class = "teamLink" })</span>
+                                }
+                            }
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}
+
+
+
