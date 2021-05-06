@@ -1,0 +1,22 @@
+﻿<div class="panel-body" id="searchBarOuterDiv">
+    @using (Html.BeginForm("SearchRoster", "Home"))
+    {
+        <div class="form-group">
+            <label>Search By:</label>
+            @Html.DropDownList("searchBy", new[] {
+              new SelectListItem() { Text = "IGN(In Game Name)", Value = "IGN(In Game Name)"},
+              new SelectListItem() { Text = "Region", Value = "Region"},
+              new SelectListItem() { Text = "KD Greater Than", Value = "KD Greater Than"},
+              new SelectListItem() { Text = "KD Less Than", Value = "KD Less Than"}
+            }, "Anything", new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Search For:</label>
+            @Html.TextBox("searchText", "", new { @class = "form-control" })
+        </div>
+
+        <div class="text-center">
+            <input class="btn btn-success" type="submit" value="Go!" />
+        </div>
+    }
+</div>

@@ -1,0 +1,109 @@
+﻿<html>
+<head>
+    <title>Kinetics Team Registration</title>
+    @Styles.Render("~/Content/Registration.css");
+    @Scripts.Render("~/Scripts/KZRegscripts.js");
+</head>
+<body>
+    <div class="headerimage">
+        <h1 id="headerIMG"><span hidden>KeneticsBannerIMG</span></h1>
+    </div>
+    <div id="headerText">
+        <h2><span>Keneticz Team Application</span></h2>
+    </div>
+    <form name="KZReg" action="../Home/Thanks.cshtml" onsubmit="return validateForm();">
+        <div id="form-PersonalInfo">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <p>
+                    <span hidden class="feedback" id="reqFields">All required fields as denoted by an astrict(*) must be filled in!</span>
+                    <label>First Name:    </label> <span hidden id="fn" class="feedback">* First Name can only contain letters.</span>
+                    <input type="text" name="firstName" size="30" maxlength="30"><br />
+                    <br />
+                    <label>Last Name:    </label> <span hidden id="ln" class="feedback">* Last Name can only contain letters.</span>
+                    <input type="text" name="lastName" size="30" maxlength="30"><br />
+                    <br />
+                    <label>Region:  </label><span hidden id="rg" class="feedback">* Region can only contain letters.</span>
+                    <input type="text" name="region" size="30" maxlength="30"><br />
+                    <br />
+                    <label>Discord Username:        </label><span hidden id="dc" class="feedback">* Discord Usernames must contain (hashtag with numbers (#____) as well.</span>
+                    <input type="text" name="discord" size="30" maxlength="30"><br />
+                    <br />
+                </p>
+            </fieldset><br />
+        </div>
+        <div id="exp-otherInfo">
+            <fieldset>
+                <legend>Your Experience</legend>
+                <div class="backgroundImage">
+                    <div id="whyPlay" class="sectDiv">
+                        <p class="txtarea">
+                            <!-- span is used to easily identify name of chosen file for simple manipulation through jscript and css-->
+                            <span class="sectHeader">Why Would You Like to Join us?</span><br /> <span hidden id="why" class="feedback"> * Dont leave this blank please.</span>
+                            <textarea name="whyJoin" cols="70" rows="10">type here...</textarea>
+                        </p>
+                    </div>
+                    <div id="wheredYouHear" class="sectDiv">
+                        <p>
+                            <span class="sectHeader">Whered You Hear About Us From?</span><br /><span hidden id="ref" class="feedback"> * Dont leave this blank please.</span>
+                            <label><input type="radio" name="hearAbtUs" value="youtube" />A Youtube Video</label><br />
+                            <label><input type="radio" name="hearAbtUs" value="community" /> From Someone in the community. Player or Non-Player</label><br />
+                            <span id="playerRef">
+                                <label>If a player referred you, who was it?<input type="text" name="playerRef" size="20" maxlength="20" /></label><br />
+                            </span><br />
+                            <label><input type="radio" name="hearAbtUs" value="discord" /> Discord, Kineticz official discord or otherwise.</label><br />
+                            <span class="txtareaSm">
+                                <label>
+                                    <input type="radio" name="hearAbtUs" value="other" /> Other, say where. <br /><span hidden id="otherRef" class="feedback"> * If you check other please, say where.</span>
+                                    <textarea id="other" cols="50" rows="5">type where here...</textarea>
+                                </label><br />
+                            </span>
+                        </p>
+                    </div>
+                    <div id="howLong" class="sectDiv">
+                        <p>
+                            <span class="sectHeader">How Long have you played Cod?</span><br /><span hidden id="exp" class="feedback"> * Dont leave this blank please.</span>
+                            <label><input type="radio" name="yearsOfExp" value="newish" /> Less than a year, Im new</label><br />
+                            <label><input type="radio" name="yearsOfExp" value="someExperience" /> I have played for some time, 5ish years</label><br />
+                            <label><input type="radio" name="yearsOfExp" value="experienced" /> Ive played for a while, 5 to 10 years</label><br />
+                            <label><input type="radio" name="yearsOfExp" value="very experienced" /> Im extremely experienced, 10 plus years</label><br />
+                        </p>
+                    </div>
+                    <div id="clips" class="sectDiv">
+                        <p>
+                            <span class="sectHeader">Upload any clips you have for us to review.</span> <br />
+                            <span id="clipsExtraTxt">If you have multiple please zip them into one folder.</span><br />
+                            <div class="uploadBtn">
+                                <label for="uploadClip-btn"><input type="file" id="uploadClip-btn" hidden="hidden"><span class="uploadBtn-text">Choose Clip/s</span></label>
+                                <span id="chosenFile">File not chosen</span>
+                            </div>
+                        </p>
+                    </div><br />
+                    <div id="clipLinks" class="sectDiv">
+                        <p>
+                            <span class="sectHeader">If You Have Links of Your Clips Link Them Here.</span> <br />
+                            <label>Link 1:        </label><span hidden id="l1" class="feedback">Must be link to youtube or twitch only.</span>
+                            <input type="text" name="link1" size="50" maxlength="50"><br />
+                            <label>Link 2:        </label><span hidden id="l2" class="feedback">Must be link to youtube or twitch only.</span>
+                            <input type="text" name="link2" size="50" maxlength="50"><br />
+                            <label>Link 3:        </label><span hidden id="l3" class="feedback">Must be link to youtube or twitch only.</span>
+                            <input type="text" name="link3" size="50" maxlength="50"><br />
+                        </p>
+                    </div>
+                    <div id="extraInfo" class="sectDiv">
+                        <p class="txtarea">
+                            <span class="sectHeader">Anything else we should know?</span><br />
+                            <textarea name="extraInfo" cols="70" rows="10">Leave your comments here please...</textarea>
+                        </p>
+                    </div>
+                </div>
+            </fieldset><br />
+        </div>
+        <div class="submitApp-btn">
+            <label for="submit-btn">Submit Your Application<input type="submit" id="submit-btn" value="Submit Your Feedback" hidden></label>
+        </div>
+    </form>
+    <script type="text/javascript" src="js/KZRegscripts.js"></script>
+
+</body>
+</html>

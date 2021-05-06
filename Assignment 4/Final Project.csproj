@@ -136,10 +136,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Index.css" />
+    <Content Include="Scripts\KZRegscripts.js" />
+    <Content Include="Content\Registration.css" />
     <Content Include="Content\Roster.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\COD_Background.jpg" />
+    <Content Include="images\KZ_Banner.jpg" />
+    <Content Include="images\KZ_logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -153,6 +158,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Shared\Registration.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -173,6 +179,10 @@
     <Content Include="Views\Home\ShowTeam.cshtml" />
     <Content Include="Views\Home\SearchTeams.cshtml" />
     <Content Include="Views\Home\SearchRoster.cshtml" />
+    <Content Include="Views\Shared\_SearchBarRoster.cshtml" />
+    <Content Include="Views\Shared\_SearchBarTeams.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Thanks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

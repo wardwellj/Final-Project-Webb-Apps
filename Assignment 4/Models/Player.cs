@@ -7,11 +7,12 @@ namespace Assignment_4.Models
 {
     public class Player
     {
-        private int id;
-        public int Id { get { return id; } }
+        private int playerId;
+        public int PlayerId { get { return playerId; } }
         public string IGN { get; set; }
         public string Region { get; set; }
         public double KD { get; set; }
+        private string TeamIds = "";
         public List<Team> Teams { get; set; }
 
         private bool isCaptain = false;
@@ -28,12 +29,14 @@ namespace Assignment_4.Models
 
         public Player(string ign, string reg, double kd, int id)
         {
-            this.id = id;
+            this.playerId = id;
             this.IGN = ign;
             this.KD = kd;
             this.Region = reg;
             Teams = new List<Team>();
         }
+
+
 
         public void setTeamCap(Team t)
         {
@@ -43,7 +46,7 @@ namespace Assignment_4.Models
             }
             foreach(Player p in t.teamPlayers)
             {
-                if (p.IGN == this.IGN && p.Id == this.Id)
+                if (p.IGN == this.IGN && p.PlayerId == this.PlayerId)
                 {
                     captOfTeam = t.Name;
                     t.Capt = this;

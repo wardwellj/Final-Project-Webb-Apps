@@ -14,6 +14,16 @@ namespace Assignment_4.Controllers
             return View();
         }
 
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        public ActionResult Thanks()
+        {
+            return View();
+        }
+
         List<Player> players = null;
         List<Team> teams = null;
         KZRoster roster;
@@ -61,7 +71,7 @@ namespace Assignment_4.Controllers
             Team pageTeam;
             foreach (Team t in teams)
             {
-                if (t.Id == id)
+                if (t.TeamId == id)
                 {
                     pageTeam = t;
                     ViewBag.Title = pageTeam.Name;

@@ -1,28 +1,9 @@
 ﻿@using Assignment_4.Models
 @Styles.Render("~/Content/Roster.css");
 
-<div class="panel-body" id="searchBarOuterDiv">
-    @using (Html.BeginForm("SearchTeams", "Home"))
-    {
-        <div class="form-group">
-            <label>Search By:</label>
-            @Html.DropDownList("searchBy", new[] {
-              new SelectListItem() { Text = "Name", Value = "Name"},
-              new SelectListItem() { Text = "Region", Value = "Region"},
-              new SelectListItem() { Text = "Captain", Value = "Captain"}
-            }, "Anything", new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <label>Search For:</label>
-            @Html.TextBox("searchText", "", new { @class = "form-control" })
-        </div>
-
-        <div class="text-center">
-            <input class="btn btn-success" type="submit" value="Go!" />
-        </div>
-    }
-</div>
 @{
+    @Html.Partial("_SearchBarTeams");
+
     ViewBag.Title = "Teams Search Results";
     Layout = "~/Views/Shared/_Layout.cshtml";
     <h2 class="title">@ViewBag.Title</h2>
@@ -39,7 +20,7 @@
             <div class="row" id="team">
                 <div class="col-md-2">
                     <div class="col-md-10">
-                        <h2>Team Name: <span>@Html.ActionLink(t.Name, "ShowTeam", "Home", new { id = t.Id }, new { @class = "teamLink" })</span></h2>
+                        <h2>Team Name: <span>@Html.ActionLink(t.Name, "ShowTeam", "Home", new { id = t.TeamId }, new { @class = "teamLink" })</span></h2>
                         <p>Region: <span>@(t.Region)</span> Captain:<span>@(t.Capt.IGN)</span></p>
                     </div>
                 </div>

@@ -7,8 +7,8 @@ namespace Assignment_4.Models
 {
     public class Team
     {
-        private int id;
-        public int Id { get { return id; }}
+        private int teamId;
+        public int TeamId { get { return teamId; }}
 
         public string Name { get; set; }
         public string Region { get; set; }
@@ -19,7 +19,7 @@ namespace Assignment_4.Models
 
         public Team(string name, string reg, int id)
         {
-            this.id = id;
+            this.teamId = id;
             this.Name = name;
             this.Region = reg;
             teamPlayers = new List<Player>();
@@ -27,7 +27,7 @@ namespace Assignment_4.Models
 
         public void addPlayer(Player p)
         {
-            if(p.Region == this.Region && p.Id > 10000)
+            if(p.Region == this.Region && p.PlayerId > 10000)
             {
                 teamPlayers.Add(p);
                 p.Teams.Add(this);
